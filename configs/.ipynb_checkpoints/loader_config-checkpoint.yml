@@ -1,0 +1,31 @@
+device:
+    gpu: None
+    n_workers: 0
+
+model:
+    arch: bisenetX39
+    version: cityscapes
+    path: /home/g.rossolini/pretrained/bisenetX39_cityscapes.pth
+    with_bn: True
+   
+data:
+    dataset: cityscapesSR
+    version: ddrnet_23 #needed for pretrained version
+    train_split: train
+    val_split: val
+    test_split: test
+    img_rows: 512 #1024
+    img_cols: 1024 #2048
+    path: /home/datasets/cityscapes/
+    img_norm: True
+    bottom_crop: 0 
+    bgr: False
+    std_version: ddrnet_23
+
+augmentation:
+    patch_size: [512, 512]  # Width and height of the patches into which the image will be split
+    perturbation_ratio: 0.3  # Ratio of patches to perturb (30%)
+    perturbation_type:  # List of perturbations to apply
+        - Brightness # adapt also the other transformations from imagenetc
+    allow_mixed_perturbations: True  # Whether multiple perturbations can be combined on the same patch
+    severity_level: 3  # Level of severity for perturbations (e.g., 1-5 scale)

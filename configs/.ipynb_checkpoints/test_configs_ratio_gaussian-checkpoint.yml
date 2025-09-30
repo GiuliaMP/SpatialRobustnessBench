@@ -1,0 +1,80 @@
+device:
+    gpu: 3
+    n_workers: 0
+
+
+models_name:
+    - bisenetX39
+    - bisenetR18
+    - bisenetR101 
+    - ddrnet23
+    - ddrnet23Slim
+    - icnet
+    - pspnet
+    - segformer_bo
+    - segformer_b1
+    - segformer_b5
+    - deeplabv3_mobilenet
+    - deeplabv3_resnet
+    - pidnet_s
+    - pidnet_m
+    - pidnet_l
+
+
+test_name: 'test_ratio_gaussian'
+   
+
+augmentation_configurations:
+  - name: "gaussian_p256_r10_sev3"
+    augmentation:
+      patch_size: [256, 256]
+      perturbation_ratio: 0.1
+      perturbation_type:
+        - Gaussian Noise
+      allow_mixed_perturbations: False
+      severity_level: 3
+
+  - name: "gaussian_p256_r25_sev3"
+    augmentation:
+      patch_size: [256, 256]
+      perturbation_ratio: 0.25
+      perturbation_type:
+        - Gaussian Noise
+      allow_mixed_perturbations: False
+      severity_level: 3
+
+  - name: "gaussian_p256_r35_sev3"
+    augmentation:
+      patch_size: [256, 256]
+      perturbation_ratio: 0.35
+      perturbation_type:
+        - Gaussian Noise
+      allow_mixed_perturbations: False
+      severity_level: 3
+
+  - name: "gaussian_p256_r50_sev3"
+    augmentation:
+      patch_size: [256, 256]
+      perturbation_ratio: 0.5
+      perturbation_type:
+        - Gaussian Noise
+      allow_mixed_perturbations: False
+      severity_level: 3
+
+  - name: "gaussian_p256_r75_sev3"
+    augmentation:
+      patch_size: [256, 256]
+      perturbation_ratio: 0.75
+      perturbation_type:
+        - Gaussian Noise
+      allow_mixed_perturbations: False
+      severity_level: 3
+
+  - name: "gaussian_p256_r100_sev3"
+    augmentation:
+      patch_size: [256, 256]
+      perturbation_ratio: 1.0
+      perturbation_type:
+        - Gaussian Noise
+      allow_mixed_perturbations: False
+      severity_level: 3

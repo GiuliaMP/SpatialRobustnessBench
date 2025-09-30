@@ -1,0 +1,73 @@
+device:
+    gpu: 3
+    n_workers: 0
+
+
+models_name:
+    - bisenetX39
+    #- bisenetR18
+    - bisenetR101 
+    #- ddrnet23
+    - ddrnet23Slim
+    - icnet
+    - pspnet
+    - segformer_bo
+    - segformer_b1
+    #- segformer_b5
+    - deeplabv3_mobilenet
+    - deeplabv3_resnet
+    #- pidnet_s
+    - pidnet_m
+    #- pidnet_l
+   
+
+test_name: 'test_attack_2_ablation'
+
+
+attack_configurations:
+
+      
+  - name: "200_200_eps16_iter50_rep3_center"
+    settings:
+      patch_size: [200,200] 
+      epsilon: 0.062745 #16/255
+      alpha: 0.0156865 #4/255
+      num_steps: 50
+      max_iterations: 3
+      attack_position: 'center'
+
+  - name: "200_200_eps16_iter100_rep3_center"
+    settings:
+      patch_size: [200,200] 
+      epsilon: 0.062745 #16/255
+      alpha: 0.0156865 #4/255
+      num_steps: 100
+      max_iterations: 3
+      attack_position: 'center'
+
+  - name: "200_200_eps16_iter200_rep3_center"
+    settings:
+      patch_size: [200,200] 
+      epsilon: 0.062745 #16/255
+      alpha: 0.0156865 #4/255
+      num_steps: 150
+      max_iterations: 3
+      attack_position: 'center'
+
+  - name: "200_200_eps16_iter250_rep3_center"
+    settings:
+      patch_size: [200,200] 
+      epsilon: 0.062745 #16/255
+      alpha: 0.0156865 #4/255
+      num_steps: 250
+      max_iterations: 3
+      attack_position: 'center'
+
+  - name: "200_200_eps16_iter20_rep3_center"
+    settings:
+      patch_size: [200,200] 
+      epsilon: 0.062745 #16/255
+      alpha: 0.0156865 #4/255
+      num_steps: 20
+      max_iterations: 3
+      attack_position: 'center'

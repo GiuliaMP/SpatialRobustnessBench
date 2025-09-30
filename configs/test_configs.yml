@@ -1,0 +1,136 @@
+device:
+    gpu: 3
+    n_workers: 0
+
+
+models_name:
+    - bisenetX39
+    - bisenetR18
+    - bisenetR101 
+    - ddrnet23
+    - ddrnet23Slim
+    - icnet
+    - pspnet
+    - segformer_bo
+    - segformer_b1
+    #- segformer_b5
+    - deeplabv3_mobilenet
+    - deeplabv3_resnet
+    - pidnet_s
+    - pidnet_m
+    - pidnet_l
+   
+
+test_name: 'test_generic_0'
+
+augmentation_configurations:
+  - name: "brightness_p256_r50_sev2"
+    augmentation:
+      patch_size: [256, 256] 
+      perturbation_ratio: 0.5  
+      perturbation_type:  
+        - Brightness
+      allow_mixed_perturbations: False 
+      severity_level: 1 
+
+  - name: "brightness_p256_r50_sev3"
+    augmentation:
+      patch_size: [256, 256] 
+      perturbation_ratio: 0.5  
+      perturbation_type:  
+        - Brightness
+      allow_mixed_perturbations: False 
+      severity_level: 3 
+
+  - name: "brightness_p256_r50_sev4"
+    augmentation:
+      patch_size: [256, 256] 
+      perturbation_ratio: 0.5  
+      perturbation_type:  
+        - Brightness
+      allow_mixed_perturbations: False 
+      severity_level: 5
+
+
+  - name: "constrast_p256_r50_sev2"
+    augmentation:
+      patch_size: [256, 256]
+      perturbation_ratio: 0.5
+      perturbation_type:
+        - Contrast
+      allow_mixed_perturbations: False
+      severity_level: 1
+
+  - name: "constrast_p256_r50_sev3"
+    augmentation:
+      patch_size: [256, 256]
+      perturbation_ratio: 0.5
+      perturbation_type:
+        - Contrast
+      allow_mixed_perturbations: False
+      severity_level: 3
+
+  - name: "constrast_p256_r50_sev4"
+    augmentation:
+      patch_size: [256, 256]
+      perturbation_ratio: 0.5
+      perturbation_type:
+        - Contrast
+      allow_mixed_perturbations: False
+      severity_level: 5
+      
+
+  - name: "snow_p256_r50_sev2"
+    augmentation:
+      patch_size: [256, 256]
+      perturbation_ratio: 0.5
+      perturbation_type:
+        - Snow
+      allow_mixed_perturbations: False
+      severity_level: 1
+
+  - name: "snow_p256_r50_sev3"
+    augmentation:
+      patch_size: [256, 256]
+      perturbation_ratio: 0.5
+      perturbation_type:
+        - Snow
+      allow_mixed_perturbations: False
+      severity_level: 3
+
+  - name: "snow_p256_r50_sev4"
+    augmentation:
+      patch_size: [256, 256]
+      perturbation_ratio: 0.5
+      perturbation_type:
+        - Snow
+      allow_mixed_perturbations: False
+      severity_level: 5
+
+
+  - name: "Gaussian_p256_r50_sev2"
+    augmentation:
+      patch_size: [256, 256]
+      perturbation_ratio: 0.5
+      perturbation_type:
+        - Gaussian Noise
+      allow_mixed_perturbations: False
+      severity_level: 1
+
+  - name: "Gaussian_p256_r50_sev3"
+    augmentation:
+      patch_size: [256, 256]
+      perturbation_ratio: 0.5
+      perturbation_type:
+        - Gaussian Noise
+      allow_mixed_perturbations: False
+      severity_level: 3
+
+  - name: "Gaussian_p256_r50_sev4"
+    augmentation:
+      patch_size: [256, 256]
+      perturbation_ratio: 0.5
+      perturbation_type:
+        - Gaussian Noise
+      allow_mixed_perturbations: False
+      severity_level: 5
